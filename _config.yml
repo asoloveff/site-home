@@ -1,5 +1,11 @@
-title: Andrey Solovev
+title: Андрей Соловьев
 description: Персональный сайт
-baseurl: ""
-url: ""
+lang: ru
+
 markdown: kramdown
+
+permalink: pretty
+
+collections:
+  blocks:
+    output: false
