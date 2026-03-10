@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* soloveff-pecita */
+ @font-face {
+	 font-family: "asoloveff-pecita";
+	 src: url(../font/asoloveff-pecita/pecita.eot);
+	 src: url(../font/asoloveff-pecita/pecita.eot?#iefix) format("embedded-opentype"), url(../font/asoloveff-pecita/pecita.svg#pecita) format("svg"), url(../font/asoloveff-pecita/pecita.ttf) format("truetype"), url(../font/asoloveff-pecita/pecita.woff) format("woff"), url(../font/asoloveff-pecita/pecita.woff2) format("woff2"), url(../font/asoloveff-pecita/pecita.otf) format("otf");
+	 font-display: fallback;
+}
+/* asoloveff-featcher */
+ @font-face {
+	 font-family: "asoloveff-featcher";
+	 src: url("../font/asoloveff-featcher/asoloveff-featcher.ttf?tq9hl7") format("truetype"), url("../font/asoloveff-featcher/asoloveff-featcher.woff?tq9hl7") format("woff"), url("../font/asoloveff-featcher/asoloveff-featcher.svg?tq9hl7#asoloveff-featcher") format("svg");
+	 font-weight: normal;
+	 font-style: normal;
+	 font-display: fallback;
+}
+/* Tilda Sans Regular */
+ @font-face {
+	 font-family: "TildaSansRegular";
+	 src: url(../font/tilda-sans/regular/TildaSans-Regular.eot);
+	 src: url(../font/tilda-sans/regular/TildaSans-Regular.eot?#iefix) format("embedded-opentype"), url(../font/tilda-sans/regular/TildaSans-Regular.woff2) format("woff2"), url(../font/tilda-sans/regular/TildaSans-Regular.woff) format("woff");
+	 font-weight: normal;
+	 font-style: normal;
+	 font-display: fallback;
+}
+/* Tilda Sans Light */
+ @font-face {
+	 font-family: "TildaSansLight";
+	 src: url(../font/tilda-sans/light/TildaSans-Light.eot);
+	 src: url(../font/tilda-sans/light/TildaSans-Light.eot?#iefix) format("embedded-opentype"), url(../font/tilda-sans/light/TildaSans-Light.woff2) format("woff2"), url(../font/tilda-sans/light/TildaSans-Light.woff) format("woff");
+	 font-weight: normal;
+	 font-style: normal;
+	 font-display: fallback;
+}
+/* Tilda Sans Semibold */
+ @font-face {
+	 font-family: "TildaSansSemibold";
+	 src: url(../font/tilda-sans/semibold/TildaSans-Semibold.eot);
+	 src: url(../font/tilda-sans/semibold/TildaSans-Semibold.eot?#iefix) format("embedded-opentype"), url(../font/tilda-sans/semibold/TildaSans-Semibold.woff2) format("woff2"), url(../font/tilda-sans/semibold/TildaSans-Semibold.woff) format("woff");
+	 font-weight: normal;
+	 font-style: normal;
+	 font-display: fallback;
+}
+/* Fira Code Regular */
+ @font-face {
+	 font-family: "FiraCode-Regular";
+	 src: url(../font/fira-code/regular/FiraCode-Regular.eot);
+	 src: url(../font/fira-code/regular/FiraCode-Regular.eot?#iefix) format("embedded-opentype"), url(../font/fira-code/regular/FiraCode-Regular.otf) format("otf"), url(../font/fira-code/regular/FiraCode-Regular.svg#FiraCode-Regular) format("svg"), url(../font/fira-code/regular/FiraCode-Regular.ttf) format("truetype"), url(../font/fira-code/regular/FiraCode-Regular.woff) format("woff"), url(../font/fira-code/regular/FiraCode-Regular.woff2) format("woff2");
+	 font-weight: normal;
+	 font-style: normal;
+	 font-display: fallback;
+}
+/* Fira Code Light */
+ @font-face {
+	 font-family: "FiraCode-Light";
+	 src: url(../font/fira-code/light/FiraCode-Light.eot);
+	 src: url(../font/fira-code/light/FiraCode-Light.eot?#iefix) format("embedded-opentype"), url(../font/fira-code/light/FiraCode-Light.otf) format("otf"), url(../font/fira-code/light/FiraCode-Light.svg#FiraCode-Light) format("svg"), url(../font/fira-code/light/FiraCode-Light.ttf) format("truetype"), url(../font/fira-code/light/FiraCode-Light.woff) format("woff"), url(../font/fira-code/light/FiraCode-Light.woff2) format("woff2");
+}

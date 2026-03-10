@@ -1,0 +1,308 @@
+:root {
+  --bg: #26262a;
+  --bg-alt: #000e1c;
+  --text: #ffffff;
+  --muted: #efefef;
+  --link: #ea6840;
+  --accent: #c23429;
+  --border: #363838;
+  --button-bg: #363838;
+  --button-text: #8e918f;
+  --max-width: 1640px;
+
+  /* easing */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* animation */
+  --anim-fast: 0.32s var(--ease-out);
+  --anim-slow: 0.45s var(--ease-out);
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.25);
+  --shadow-deep: 0 30px 80px rgba(0,0,0,0.35);
+
+  --container-pad: 1.25rem;
+
+  /* ================= SAFE FLUID TYPE ================= */
+
+  --fs-body: clamp(1.1rem, 1rem + 0.2vw, 1.3rem);
+  --fs-h2: clamp(2.4rem, 2vw, 3rem);          /* сохраняем твой масштаб */
+  --fs-hero: clamp(4rem, 4vw, 8rem);          /* сохраняем твой масштаб */
+  --fs-small: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+
+  /* ================= OPTICAL SPACING ================= */
+
+  --space-2xs: clamp(0.4rem, 0.35rem + 0.2vw, 0.6rem);
+  --space-xs: clamp(0.6rem, 0.5rem + 0.4vw, 0.9rem);
+  --space-sm: clamp(0.9rem, 0.75rem + 0.6vw, 1.4rem);
+  --space-md: clamp(1.4rem, 1.1rem + 1vw, 2.2rem);
+  --space-lg: clamp(2.5rem, 2rem + 2vw, 4rem);
+  --space-xl: clamp(4rem, 4vw, 8rem);
+
+  --flow-space: var(--space-sm);
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --container-pad: clamp(1.25rem, 4vw, 4rem);
+  }
+}
+
+body.light {
+  --bg: #f5f7fb;
+  --bg-alt: #cac5c2;
+  --text: #000000;
+  --muted: #28282d;
+  --link: #4f84c4;
+  --accent: #0077ff;
+  --border: #e6e9ef;
+  --button-bg: #fcfcf5;
+  --button-text: #babcc0;
+
+  --shadow-soft:
+    0 2px 8px rgba(0,0,0,0.14),
+    0 12px 30px rgba(0,0,0,0.16);
+
+  --shadow-deep:
+    0 10px 30px rgba(0,0,0,0.18),
+    0 30px 80px rgba(0,0,0,0.20);
+}
+
+/* ================= RESET ================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: clamp(18px, 0.7vw + 12px, 24px);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "TildaSansRegular";
+  font-size: var(--fs-body);
+  background: radial-gradient(1200px 600px at 20% 0%, var(--bg-alt), var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.55;
+}
+
+/* ================= THEME BUTTON ================= */
+
+.theme-toggle {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 1000;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 0;
+  border-radius: 100px;
+  padding: 0.5rem;
+  font-size: 0;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--anim-fast),
+    color var(--anim-fast),
+    box-shadow var(--anim-fast),
+    background-color var(--anim-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.dark .theme-toggle:before,
+.light .theme-toggle:before {
+  font-family: "asoloveff-featcher";
+  font-size: 0.85rem;
+}
+
+.dark .theme-toggle:before { content: "\e9f8"; }
+.light .theme-toggle:before { content: "\e9f9"; }
+
+@media (max-width: 600px) {
+  .theme-toggle {
+    position: static;
+    display: block;
+    margin: 0.75rem 1.25rem 0 auto;
+  }
+
+  body {
+    padding-top: 0.25rem;
+  }
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--space-md);
+  align-items: center;
+  align-content: center;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  will-change: transform, filter;
+  justify-self: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  transition:
+    filter var(--anim-fast),
+    transform var(--anim-fast),
+    box-shadow var(--anim-fast);
+}
+
+.hero-photo:hover {
+  filter: grayscale(40%);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.55);
+}
+
+.hero-title {
+  font-size: var(--fs-hero);
+  font-family: "TildaSansSemibold";
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.hero-sub {
+  margin-top: var(--space-xs);
+  color: var(--muted);
+  max-width: 40ch;
+}
+
+/* desktop hero layout */
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 420px 1fr;
+    gap: 4rem;
+  }
+
+  .hero-photo {
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1600px) {
+  html { font-size: 24px; }
+
+  .hero-grid {
+    grid-template-columns: 460px 1fr;
+  }
+}
+
+/* ================= SECTIONS ================= */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+section + section {
+  margin-top: var(--space-xl);
+}
+
+section:first-child {
+  margin-top: var(--space-lg);
+}
+
+section:last-child {
+  margin-bottom: var(--space-xl);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= TYPOGRAPHY ================= */
+
+.hero-title,
+h2 { text-wrap: balance; }
+
+p {
+  text-wrap: pretty;
+  color: var(--muted);
+}
+
+p + p {
+  margin-top: var(--flow-space);
+}
+
+@media (max-width: 450px) {
+  p.smart-justify {
+    text-align: justify;
+    text-justify: inter-word;
+
+    /* ключевые улучшения */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    /* современная балансировка */
+    text-wrap: pretty;
+  }
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-family: "TildaSansSemibold";
+  margin-bottom: var(--space-xs);
+  letter-spacing: -0.02em;
+}
+
+/* ================= LINKS ================= */
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+  width: fit-content;
+  transition:
+    color var(--anim-fast),
+    border-color var(--anim-fast);
+}
+
+a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+a.no-line-breaks {
+  white-space: nowrap;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1.2rem 0;
+  color: var(--button-text);
+  font-size: var(--fs-small);
+  font-family: "asoloveff-pecita";
+}
