@@ -2,21 +2,32 @@
 <html lang="ru">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{{ page.title }}</title>
+<meta name="theme-color" content="#000e1c">
+<meta name="msapplication-navbutton-color" content="#000e1c">
+<meta name="apple-mobile-web-app-status-bar-style" content="#000e1c">
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/font.css">
 
+<title>{{ site.title }}</title>
 </head>
 
-<body>
+<body class="dark">
 
+<button class="theme-toggle" id="themeToggle">Light</button>
+
+{% include header.html %}
+
+<main class="container">
 {{ content }}
+</main>
 
-<script src="/assets/js/script.js"></script>
+{% include footer.html %}
+
+<script src="/assets/js/dark-light.js"></script>
 
 </body>
 </html>
