@@ -9,8 +9,8 @@
 <meta name="msapplication-navbutton-color" content="#000e1c">
 <meta name="apple-mobile-web-app-status-bar-style" content="#000e1c">
 
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/font.css">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/font.css' | relative_url }}">
 
 <title>{{ site.title }}</title>
 </head>
@@ -27,7 +27,7 @@
 
 {% include footer.html %}
 
-<script src="/assets/js/dark-light.js"></script>
+<script src="{{ '/assets/js/dark-light.js' | relative_url }}"></script>
 
 </body>
 </html>
